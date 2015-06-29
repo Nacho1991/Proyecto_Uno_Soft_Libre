@@ -4,11 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/*Clase Artist, */
 class Artist extends Model
 {
-    protected $table = 'artist';
-    protected $filabel = [
-        'id',
-        'name'
-    ];
+   public $timestamps = false;
+   protected $table = 'artist';    
+   protected $fillable = ['name'];    
 }
