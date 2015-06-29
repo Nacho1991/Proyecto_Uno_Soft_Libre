@@ -1,20 +1,24 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Faker\Factory as Faker;
+use Faker\Factory as FakerFactory;
 
-class UserTableSeeder extends Seeder{
-
+class UserTableSeeder extends Seeder
+{
     public function run(){
-
-        $faker = Faker::create();
-        for($i=0;$i<30;$i++) {
-            \DB::table('users')->insert(array(
-                'username' => $faker->userName,
-                'email' => $faker->unique()->email,
-                'password' => \Hash::make('12345'),
-                'is_admin' => false
-            ));
+        $faker = FakerFactory::create();
+        $isAdmin = true;
+        for ($i = 0; $i < 30; $i++) {
+            if ($i == 1) {
+                $isAdmin = false;
+            } else {
+                \DB::table('user')->insert(array(
+                    'email' => $faker->email,
+                    'password' => \Hash::make('12345'),
+                    'is_admin' => $isAdmin
+                ));
+            }
         }
     }
+
 }
