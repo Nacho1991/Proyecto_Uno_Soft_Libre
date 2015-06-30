@@ -15,8 +15,4 @@ class Song extends Model
    {
         return $this->hasOne('\App\Artist','id','artist_id');
    }
-
-   
-
-   
 }
