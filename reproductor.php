@@ -1,7 +1,7 @@
 <?php
 
 //include(__DIR__ . '/config.php');
-require_once '/home/ignacio/cyberLav/vendor/autoload.php';
+require_once '/home/ignacio/ProyectoCyberLab/vendor/autoload.php';
 use PhpAmqpLib\Connection\AMQPConnection;
 
 $exchange = 'router';

@@ -12,12 +12,13 @@ class User extends Migration
      */
     public function up()
     {
-        Schema::create('user',function(Blueprint $table){
+        Schema::create('user', function (Blueprint $table) {
             $valor = false;
             $table->increments('id');
             $table->string('email')->nullable();
             $table->string('password')->nullable();
             $table->boolean('is_admin')->nullable()->default($valor);
+            $table->rememberToken();
         });
     }
 
